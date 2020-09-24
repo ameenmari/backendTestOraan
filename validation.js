@@ -1,5 +1,5 @@
 
-import Joi, { number } from '@hapi/joi';
+import Joi from '@hapi/joi';
 const signinValidation = (data) => {
     const schema = {
         number: Joi.string().min(10).max(15).required(),
@@ -24,7 +24,8 @@ const registerValidation = (data) => {
 const instalmentValidation = (data) => {
     const schema = {
 
-        instalmentAmount: Joi.number().min(1000).required(),
+
+        instalmentAmount: Joi.string().regex(/^[0-9]/).required(),
         paymentMethod: Joi.string().min(4).max(30).required(),
         userId: Joi.string().required()
 
