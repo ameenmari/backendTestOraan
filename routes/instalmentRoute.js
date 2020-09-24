@@ -5,9 +5,7 @@ import { instalmentValidation } from '../validation'
 
 const router = express.Router();
 
-
 router.post('/saveinstalment', async (req, res) => {
-
 
     const { error } = instalmentValidation(req.body)
     if (error) {

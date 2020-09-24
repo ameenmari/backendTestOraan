@@ -28,7 +28,7 @@ A boilerplate/starter RESTful APIs using Node.js, Express, and Mongoose.
 Clone the repo:
 
 ```bash
-git https://github.com/ameenmari/OraanBackendTest.git
+git https://github.com/ameenmari/backendTestOraan
 cd OraanTest
 ```
 
@@ -36,14 +36,16 @@ Install the dependencies:
 
 ```bash
 npm install
+npm install nodemon babel-node
 ```
 
 Set the environment variables:
 
 ```bash
-cp .env.example .env
+.env
 
-# open .env and modify the environment variables (if needed)
+#if you not find the .env file please create one 
+# open .env and modify or enter the the environment variables there names are available in config.js file (if needed)
 ```
 
 ### Commands
