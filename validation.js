@@ -12,7 +12,7 @@ const signinValidation = (data) => {
 const registerValidation = (data) => {
     const schema = {
 
-        number: Joi.string().regex(/^[0-9]{4,6}$/).required(),
+        number: Joi.string().regex(/^[0-9]{10,15}$/).required(),
         name: Joi.string().min(3).max(15).required(),
         password: Joi.string().min(6).max(15).required()
 
