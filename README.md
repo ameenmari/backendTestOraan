@@ -13,7 +13,7 @@ A boilerplate/starter RESTful APIs using Node.js, Express, and Mongoose.
 - [API Documentation](#api-documentation)
 - [Error Handling](#error-handling)
 - [Validation](#validation)
-
+-[Postman-tests]
 ## Features
 
 - **NoSQL database**: [MongoDB](https://www.mongodb.com) object data modeling using [Mongoose](https://mongoosejs.com)
@@ -115,6 +115,105 @@ router.post('/signin', async (req, res) => {
     const { error } = signinValidation(req.body)
      }
 ```
+
+
+# postman-test
+
+### Register a user
+
+**POST** `http://localhost:5000/api/users/register`
+
+Body of **request** must be JSON. Sample:
+
+
+```json
+{
+  "number": "03033333333",
+  "name":"Muhammad Ameen",
+  "password": "ameen123"
+}
+```
+Valid request will return a JSON string **response** like this sample:
+
+```json
+{
+    "_id": "5f6c5a3e87166419e0506ca7"
+}
+```
+
+
+### Signin 
+
+**Get** `http://localhost:5000/api/users/signin`
+
+Body of **request** must be JSON. Sample:
+
+```json
+{
+  "number": "03033333333",
+  "password": "ameen123"
+}
+```
+
+Valid request will return a JSON string **response** like this sample:
+
+```json
+{
+    "_id": "5f6c5a3e87166419e0506ca7"
+}
+```
+
+
+### Save user instalment
+
+**POSt** `http://localhost:5000/api/instalments/saveinstalment`
+
+Body of **request** must be JSON. Sample:
+
+```json
+
+{
+    "userId":"5f6c5a3e87166419e0506ca7",
+    "instalmentAmount":"9000",
+    "paymentMethod":"JazzCash"
+
+}
+```
+
+Valid request will return a JSON string **response** like this sample:
+
+```json
+{
+    "message": "instalment paid"
+}
+```
+
+
+
+
+### Get total amount of a user paid in instalments 
+
+**POSt** `http://localhost:5000/api/instalments/totalInstalments`
+
+Body of **request** must be JSON. Sample:
+
+```json
+
+{
+    "userId":"5f6c5a3e87166419e0506ca7",
+    
+}
+```
+
+Valid request will return a JSON string **response** like this sample:
+
+```json
+{
+    "total": 9000
+}
+```
+
+
 
 ## License
 
